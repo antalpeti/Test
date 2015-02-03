@@ -1,2 +1,8 @@
 int[] intA = new int[] {0, 1, 2, 2, 3, 4, 3, 2, 2, 1, 0};
-return intA.length;
+return intA.length; 
+
+new java.util.Date()(java.util.Date) Sat Jan 31 21:46:10 CET 2015
+(java.util.Date) Sat Jan 31 21:43:34 CET 2015
+
+1148 + 785
+(int) 1933
