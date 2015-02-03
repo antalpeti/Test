@@ -5,6 +5,9 @@ import java.text.MessageFormat;
 
 public class StringConcatenation {
 
+  private static final String EXCLAMATORY = "!";
+  private static final String TEST = "Test ";
+  private static final String HELLO = "Hello";
   private static final String STRING_BUILDER = "\nStringBuilder:";
   private static final String STRING_BUFFER = "\nStringBuffer:";
   private static final String MESSAGE_FORMAT = "\nMessageFormat:";
@@ -14,19 +17,19 @@ public class StringConcatenation {
 
     System.out.println(MESSAGE_FORMAT);
     long start = System.nanoTime();
-    MessageFormat.format("Test {0}{1}", " Hello", "!");
+    MessageFormat.format("{0}{1}{2}", TEST, HELLO, EXCLAMATORY);
     long time1 = System.nanoTime() - start;
     System.out.println(time1 + NS);
 
     System.out.println(STRING_BUFFER);
     start = System.nanoTime();
-    new StringBuffer("Test ").append("Hello").append("!").toString();
+    new StringBuffer(TEST).append(HELLO).append(EXCLAMATORY).toString();
     long time2 = System.nanoTime() - start;
     System.out.println(time2 + NS);
 
     System.out.println(STRING_BUILDER);
     start = System.nanoTime();
-    new StringBuilder("Test ").append("Hello").append("!").toString();
+    new StringBuilder(TEST).append(HELLO).append(EXCLAMATORY).toString();
     long time3 = System.nanoTime() - start;
     System.out.println(time3 + NS);
 
