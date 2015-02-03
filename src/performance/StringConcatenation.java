@@ -5,6 +5,7 @@ import java.text.MessageFormat;
 
 public class StringConcatenation {
 
+  private static final String CONCATENATION = "\nConcatenation:";
   private static final String EXCLAMATORY = "!";
   private static final String TEST = "Test ";
   private static final String HELLO = "Hello";
@@ -33,13 +34,21 @@ public class StringConcatenation {
     long time3 = System.nanoTime() - start;
     System.out.println(time3 + NS);
 
+    System.out.println(CONCATENATION);
+    start = System.nanoTime();
+    new StringBuilder(TEST + HELLO + EXCLAMATORY);
+    long time4 = System.nanoTime() - start;
+    System.out.println(time4 + NS);
+
     long maxTime = Math.max(time1, time2);
     maxTime = Math.max(maxTime, time3);
+    maxTime = Math.max(maxTime, time4);
 
     System.out.println("\nHow many times faster the given method according to the slowest method?");
     System.out.println(MESSAGE_FORMAT + maxTime / time1);
     System.out.println(STRING_BUFFER + maxTime / time2);
     System.out.println(STRING_BUILDER + maxTime / time3);
+    System.out.println(CONCATENATION + maxTime / time4);
 
   }
 }
