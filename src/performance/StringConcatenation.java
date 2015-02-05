@@ -1,6 +1,8 @@
 package performance;
 
 import java.text.MessageFormat;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class StringConcatenation {
@@ -11,44 +13,78 @@ public class StringConcatenation {
   private static final String HELLO = "Hello";
   private static final String STRING_BUILDER = "\nStringBuilder:";
   private static final String STRING_BUFFER = "\nStringBuffer:";
-  private static final String MESSAGE_FORMAT = "\nMessageFormat:";
+  private static final String MESSAGEFORMAT = "\nMessageFormat:";
   private static final String NS = " ns";
+
+  private static Map<String, Statements> ssMap;
+  private static Map<String, Long> timeMap;
 
   public static void main(String[] args) {
 
-    System.out.println(MESSAGE_FORMAT);
-    long start = System.nanoTime();
-    MessageFormat.format("{0}{1}{2}", TEST, HELLO, EXCLAMATORY);
-    long time1 = System.nanoTime() - start;
-    System.out.println(time1 + NS);
+    createStatements();
+    timeMap = new HashMap<String, Long>();
 
-    System.out.println(STRING_BUFFER);
-    start = System.nanoTime();
-    new StringBuffer(TEST).append(HELLO).append(EXCLAMATORY).toString();
-    long time2 = System.nanoTime() - start;
-    System.out.println(time2 + NS);
+    long time = TimeUtil.mesureExecutionTime(MESSAGEFORMAT, ssMap.get(MESSAGEFORMAT));
+    timeMap.put(MESSAGEFORMAT, time);
 
-    System.out.println(STRING_BUILDER);
-    start = System.nanoTime();
-    new StringBuilder(TEST).append(HELLO).append(EXCLAMATORY).toString();
-    long time3 = System.nanoTime() - start;
-    System.out.println(time3 + NS);
+    time = TimeUtil.mesureExecutionTime(STRING_BUFFER, ssMap.get(STRING_BUFFER));
+    timeMap.put(STRING_BUFFER, time);
 
-    System.out.println(CONCATENATION);
-    start = System.nanoTime();
-    new StringBuilder(TEST + HELLO + EXCLAMATORY);
-    long time4 = System.nanoTime() - start;
-    System.out.println(time4 + NS);
+    time = TimeUtil.mesureExecutionTime(STRING_BUILDER, ssMap.get(STRING_BUILDER));
+    timeMap.put(STRING_BUILDER, time);
 
-    long maxTime = Math.max(time1, time2);
-    maxTime = Math.max(maxTime, time3);
-    maxTime = Math.max(maxTime, time4);
+    time = TimeUtil.mesureExecutionTime(CONCATENATION, ssMap.get(CONCATENATION));
+    timeMap.put(CONCATENATION, time);
+
+
+    long maxTime = TimeUtil.calculateMaxTime(timeMap.values());
 
     System.out.println("\nHow many times faster the given method according to the slowest method?");
-    System.out.println(MESSAGE_FORMAT + maxTime / time1);
-    System.out.println(STRING_BUFFER + maxTime / time2);
-    System.out.println(STRING_BUILDER + maxTime / time3);
-    System.out.println(CONCATENATION + maxTime / time4);
+    TimeUtil.printExecutionTimes(timeMap, maxTime);
 
+  }
+
+  private static void createStatements() {
+    ssMap = new HashMap<String, Statements>();
+
+    String key = MESSAGEFORMAT;
+    Statements value = new Statements() {
+
+      @Override
+      public void runStatements() {
+        MessageFormat.format("{0}{1}{2}", TEST, HELLO, EXCLAMATORY);
+      }
+    };
+    ssMap.put(key, value);
+
+    key = STRING_BUFFER;
+    value = new Statements() {
+
+      @Override
+      public void runStatements() {
+        new StringBuffer(TEST).append(HELLO).append(EXCLAMATORY).toString();
+      }
+    };
+    ssMap.put(key, value);
+
+    key = STRING_BUILDER;
+    value = new Statements() {
+
+      @Override
+      public void runStatements() {
+        new StringBuilder(TEST).append(HELLO).append(EXCLAMATORY).toString();
+      }
+    };
+    ssMap.put(key, value);
+
+    key = CONCATENATION;
+    value = new Statements() {
+
+      @Override
+      public void runStatements() {
+        new String(TEST + HELLO + EXCLAMATORY);
+      }
+    };
+    ssMap.put(key, value);
   }
 }
