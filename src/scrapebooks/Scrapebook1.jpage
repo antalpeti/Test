@@ -1,8 +1,12 @@
 int[] intA = new int[] {0, 1, 2, 2, 3, 4, 3, 2, 2, 1, 0};
-return intA.length; 
+intA.length  (int) 11 
 
-new java.util.Date()(java.util.Date) Sat Jan 31 21:46:10 CET 2015
-(java.util.Date) Sat Jan 31 21:43:34 CET 2015
+new java.util.Date() (java.util.Date) Mon Feb 09 16:22:11 CET 2015 
 
-1148 + 785
-(int) 1933
+
+1148 + 785 (int) 1933
+
+1 %  0 An exception occurred during evaluation:  java.lang.ArithmeticException
+1 / 0 An exception occurred during evaluation:  java.lang.ArithmeticException
+1f % 0f (float) NaN
+1f / 0f (float) Infinity
