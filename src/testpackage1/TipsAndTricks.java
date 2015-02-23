@@ -75,4 +75,29 @@ public class TipsAndTricks {
     TipsAndTricks.isOk = isOk;
   }
 
+  private void privateMethod() {
+    System.out.println("This is a private method :)");
+  }
+
+  private static int privateStaticMethod() {
+    return (int) (Math.random() * 10);
+  }
+
+  protected String protectedMethod(String msg) {
+    return msg;
+  }
+
+  public boolean publicMethod(int num) {
+    return num > 10;
+  }
+
+  public static void publicStaticMethod() {
+    System.out.println("This is a public static method.");
+  }
+
+  public static void main(String[] args) {
+    TipsAndTricks obj = new TipsAndTricks();
+    obj.privateMethod();
+    TipsAndTricks.privateStaticMethod();
+  }
 }
