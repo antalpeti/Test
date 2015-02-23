@@ -7,6 +7,7 @@ public class Test {
     System.out.print(i);
   }
 
+  @SuppressWarnings("unchecked")
   public static void main(String[] args) {
     // Polymorphism
     Foo f = new Bar();
@@ -38,6 +39,19 @@ public class Test {
       System.out.println("ArrayStoreException thrown");
     }
 
+    // Dynamic class loading and instantiation
+    try {
+      String s = "java.util.ArrayList";
+      @SuppressWarnings("rawtypes")
+      Class c = Class.forName(s);
+      Object o = c.newInstance();
+      @SuppressWarnings("rawtypes")
+      java.util.List l = (java.util.ArrayList) o;
+      l.add("list");
+      System.out.println(l);
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+      e.printStackTrace();
+    }
   }
 
   static class C {
