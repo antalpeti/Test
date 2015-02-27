@@ -6,4 +6,8 @@ public class Parent {
   public Parent() {
     parentField = 10;
   }
+
+  public void msg() {
+    System.out.println("Message form Parent");
+  }
 }

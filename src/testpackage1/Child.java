@@ -19,6 +19,11 @@ public class Child extends Parent {
     this.name = name;
   }
 
+  @Override
+  public void msg() {
+    System.out.println("Message form Child");
+  }
+
   public static void main(String[] args) {
     Child child = new Child();
     System.out.println(child.childField);
