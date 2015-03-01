@@ -59,12 +59,13 @@ public class Fibonacci {
   }
 
   public static void sumFibonacci() {
-    int fibo1 = 1, fibo2 = 1, fibonacci = 0, sum = 0;
+    int fibo1 = 1, fibo2 = 0, fibonacci = 0, sum = 0;
     while (fibonacci < 1000) {
       fibonacci = fibo1 + fibo2;
       fibo1 = fibo2;
       fibo2 = fibonacci;
       sum += fibonacci;
+      System.out.println(fibonacci);
     }
     System.out.println(sum);
   }
