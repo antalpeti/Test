@@ -10,3 +10,6 @@ new java.util.Date() (java.util.Date) Mon Feb 09 16:22:11 CET 2015
 1 / 0 An exception occurred during evaluation:  java.lang.ArithmeticException
 1f % 0f (float) NaN
 1f / 0f (float) Infinity
+
+
+
