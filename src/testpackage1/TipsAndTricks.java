@@ -98,6 +98,10 @@ public class TipsAndTricks {
   public static void main(String[] args) {
     TipsAndTricks obj = new TipsAndTricks();
     obj.privateMethod();
-    TipsAndTricks.privateStaticMethod();
+    System.out.println(TipsAndTricks.privateStaticMethod());
+    String[] sa = new String[] {"abc", "def", "ghl"};
+    for (int i = sa.length - 1; i >= 0; i--) {
+      System.out.print(sa[i]);
+    }
   }
 }
