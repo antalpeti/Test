@@ -14,6 +14,8 @@ public class ParameterHandling {
 
   private static void doArrayList(List<String> l) {
     l.add("something");
+    l = new ArrayList<String>();
+    l.add("something else");
   }
 
   public static void foo(Dog d) {
