@@ -1,25 +1,23 @@
 package trickyexamples;
 
-import java.util.Scanner;
 
 public class Fibonacci {
 
   public static void main(String args[]) {
 
-    System.out.println("Enter number upto which Fibonacci series to print: ");
-    Scanner sc = new Scanner(System.in);
-    int number = sc.nextInt();
-
+    int number = 10;
     System.out.println("Fibonacci series upto " + number + " numbers : ");
 
     for (int i = 1; i <= number; i++) {
       System.out.print(fibonacci2(i) + " ");
     }
     System.out.println();
-    sc.close();
 
     System.out.println("\nSum of fibonacci numbers under 1000:");
     sumFibonacci();
+
+    System.out.println("The 10 th Fibonacci number");
+    System.out.println(fibo(10));
   }
 
 
@@ -35,6 +33,23 @@ public class Fibonacci {
     }
 
     return fibonacci(number - 1) + fibonacci(number - 2); // tail recursion
+  }
+
+  /**
+   * Calculate the n<sup>th</sup> Fibonacci number.
+   *
+   * @param n
+   * @return
+   */
+  public static int fibo(int n) {
+    if (n == 0) {
+      return 0;
+    }
+    if (n == 1) {
+      return 1;
+    } else {
+      return fibo(n - 1) + fibo(n - 2);
+    }
   }
 
   /**
