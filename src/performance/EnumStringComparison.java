@@ -23,30 +23,30 @@ public class EnumStringComparison {
     createStatements();
     timeMap = new HashMap<String, Long>();
 
-    long time = TimeUtil.mesureExecutionTime(STRING1, ssMap.get(STRING1));
+    long time = TimeUtil.measureExecutionTime(STRING1, ssMap.get(STRING1));
     timeMap.put(STRING1, time);
-    time = TimeUtil.mesureExecutionTime(STRING2, ssMap.get(STRING2));
+    time = TimeUtil.measureExecutionTime(STRING2, ssMap.get(STRING2));
     timeMap.put(STRING2, time);
-    time = TimeUtil.mesureExecutionTime(STRING3, ssMap.get(STRING3));
+    time = TimeUtil.measureExecutionTime(STRING3, ssMap.get(STRING3));
     timeMap.put(STRING3, time);
-    time = TimeUtil.mesureExecutionTime(STRING4, ssMap.get(STRING4));
+    time = TimeUtil.measureExecutionTime(STRING4, ssMap.get(STRING4));
     timeMap.put(STRING4, time);
-    time = TimeUtil.mesureExecutionTime(STRING5, ssMap.get(STRING5));
+    time = TimeUtil.measureExecutionTime(STRING5, ssMap.get(STRING5));
     timeMap.put(STRING5, time);
-    time = TimeUtil.mesureExecutionTime(STRING6, ssMap.get(STRING6));
+    time = TimeUtil.measureExecutionTime(STRING6, ssMap.get(STRING6));
     timeMap.put(STRING6, time);
-    time = TimeUtil.mesureExecutionTime(STRING7, ssMap.get(STRING7));
+    time = TimeUtil.measureExecutionTime(STRING7, ssMap.get(STRING7));
     timeMap.put(STRING7, time);
-    time = TimeUtil.mesureExecutionTime(STRING8, ssMap.get(STRING8));
+    time = TimeUtil.measureExecutionTime(STRING8, ssMap.get(STRING8));
     timeMap.put(STRING8, time);
-    time = TimeUtil.mesureExecutionTime(STRING9, ssMap.get(STRING9));
+    time = TimeUtil.measureExecutionTime(STRING9, ssMap.get(STRING9));
     timeMap.put(STRING9, time);
 
 
     long maxTime = TimeUtil.calculateMaxTime(timeMap.values());
 
     System.out.println("\nHow many times faster the given method according to the slowest method?");
-    TimeUtil.printExecutionTimes(timeMap, maxTime);
+    TimeUtil.printExecutionTimesComparison(timeMap, maxTime);
   }
 
   private static void createStatements() {

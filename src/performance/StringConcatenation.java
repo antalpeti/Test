@@ -24,23 +24,23 @@ public class StringConcatenation {
     createStatements();
     timeMap = new HashMap<String, Long>();
 
-    long time = TimeUtil.mesureExecutionTime(MESSAGEFORMAT, ssMap.get(MESSAGEFORMAT));
+    long time = TimeUtil.measureExecutionTime(MESSAGEFORMAT, ssMap.get(MESSAGEFORMAT));
     timeMap.put(MESSAGEFORMAT, time);
 
-    time = TimeUtil.mesureExecutionTime(STRING_BUFFER, ssMap.get(STRING_BUFFER));
+    time = TimeUtil.measureExecutionTime(STRING_BUFFER, ssMap.get(STRING_BUFFER));
     timeMap.put(STRING_BUFFER, time);
 
-    time = TimeUtil.mesureExecutionTime(STRING_BUILDER, ssMap.get(STRING_BUILDER));
+    time = TimeUtil.measureExecutionTime(STRING_BUILDER, ssMap.get(STRING_BUILDER));
     timeMap.put(STRING_BUILDER, time);
 
-    time = TimeUtil.mesureExecutionTime(CONCATENATION, ssMap.get(CONCATENATION));
+    time = TimeUtil.measureExecutionTime(CONCATENATION, ssMap.get(CONCATENATION));
     timeMap.put(CONCATENATION, time);
 
 
     long maxTime = TimeUtil.calculateMaxTime(timeMap.values());
 
     System.out.println("\nHow many times faster the given method according to the slowest method?");
-    TimeUtil.printExecutionTimes(timeMap, maxTime);
+    TimeUtil.printExecutionTimesComparison(timeMap, maxTime);
 
   }
 
