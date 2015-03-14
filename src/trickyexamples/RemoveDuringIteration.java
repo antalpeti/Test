@@ -12,23 +12,17 @@ public class RemoveDuringIteration {
       set.add(i);
     }
 
-    Thread t1 = new Thread() {
-      @Override
-      public void run() {
-        iterateAndRemove(set);
-        super.run();
-      }
-    };
-    Thread t2 = new Thread() {
-      @Override
-      public void run() {
-        iterateAndRemove(set);
-        super.run();
-      }
-    };
+    for (int i = 0; i < 2; i++) {
+      Thread t1 = new Thread() {
+        @Override
+        public void run() {
+          iterateAndRemove(set);
+          super.run();
+        }
+      };
+      t1.start();
+    }
 
-    t1.start();
-    t2.start();
   }
 
   /**
