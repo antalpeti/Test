@@ -4,23 +4,23 @@ import java.util.List;
 
 public class InnerClassesDemo {
   public static void main(String[] args) {
-    OuterClass oc = new OuterClass();
-    oc.callMethods();
+    OuterClass ocObject = new OuterClass();
+    ocObject.callMethods();
 
-    OuterClass.StaticInnerClass sic = new OuterClass.StaticInnerClass();
-    sic.executeDefaultMethodSIC();
-    sic.defaultMemberSIC = true;
-    sic.executePublicSIC();
+    OuterClass.StaticInnerClass sicObject = new OuterClass.StaticInnerClass();
+    sicObject.executeDefaultMethodSIC();
+    sicObject.defaultMemberSIC = true;
+    sicObject.executePublicSIC();
 
-    OuterClass.PublicInnerClass pic = oc.new PublicInnerClass();
-    List<Integer> extracted = pic.getPrivateMemberOC();
+    OuterClass.PublicInnerClass picObject = ocObject.new PublicInnerClass();
+    List<Integer> extracted = picObject.getPrivateMemberOC();
 
     for (int i = 0; i < 10; i++) {
       extracted.add(i);
     }
-    for (Integer num : pic.getPrivateMemberOC()) {
+    for (Integer num : picObject.getPrivateMemberOC()) {
       System.out.println(num);
     }
-    System.out.println(pic.publicMemberPriIC);
+    System.out.println(picObject.publicMemberPriIC);
   }
 }
