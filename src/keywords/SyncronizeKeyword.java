@@ -1,8 +1,8 @@
 package keywords;
 
 public class SyncronizeKeyword {
-  private static int iValue;
-  private double dValue;
+  private static Integer iValue = new Integer(0);
+  private Double dValue = new Double(0D);
   private Short sValue = new Short((short) 0);
 
   public static void main(String[] args) throws InterruptedException {
@@ -19,10 +19,10 @@ public class SyncronizeKeyword {
               Thread.sleep((long) (Math.random() * 1000));
               sk.modifyDoubleValue();
               System.out.println(this.getName() + ":" + ": dValue: " + sk.dValue);
-              Thread.sleep((long) (Math.random() * 1000));
+              Thread.sleep((long) (Math.random() * 2000));
               sk.modifyShortValue();
               System.out.println(this.getName() + ":" + ": sValue: " + sk.sValue);
-              Thread.sleep((long) (Math.random() * 1000));
+              Thread.sleep((long) (Math.random() * 3000));
             } catch (InterruptedException e) {
               e.printStackTrace();
             }
