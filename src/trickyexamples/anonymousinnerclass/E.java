@@ -1,4 +1,4 @@
-package trickyexamples;
+package trickyexamples.anonymousinnerclass;
 
 public class E {
   @Override
