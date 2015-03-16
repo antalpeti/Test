@@ -1,4 +1,4 @@
-package trickyexamples;
+package trickyexamples.casting;
 
 public class NullCasting {
   public static void main(String[] args) {
