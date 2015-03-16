@@ -1,4 +1,4 @@
-package trickyexamples;
+package trickyexamples.innerclass;
 
 import java.util.List;
 
