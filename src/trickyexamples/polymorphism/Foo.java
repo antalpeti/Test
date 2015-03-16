@@ -1,4 +1,4 @@
-package trickyexamples;
+package trickyexamples.polymorphism;
 
 public class Foo {
   public int a;

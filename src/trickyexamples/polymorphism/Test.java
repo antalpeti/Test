@@ -1,4 +1,5 @@
-package trickyexamples;
+package trickyexamples.polymorphism;
+
 
 public class Test {
   static int i = 2;
