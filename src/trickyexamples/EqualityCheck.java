@@ -17,7 +17,14 @@ public class EqualityCheck {
     System.out.println(result);
   }
 
+  private static void checkTwoZero() {
+    System.out.println(0.0 == -0.0 ? false : true);
+  }
+
   public static void main(String[] args) {
+    System.out.println("--NaN, POSITIVE_INFINITY and NEGATIVE_INFINITY comparison--");
     checkNotNumbers();
+    System.out.println("\n--Two zero comparison--");
+    checkTwoZero();
   }
 }
