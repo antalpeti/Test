@@ -25,11 +25,6 @@ public class Test {
     i = 1;
     System.out.print(i);
 
-    // Covariant return type
-    System.out.println();
-    A a = new B();
-    a.getObj();
-
     // Upcasting
     Test[] tests = new Test[10];
     Object[] objects = tests;
@@ -52,27 +47,6 @@ public class Test {
       System.out.println(l);
     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
       e.printStackTrace();
-    }
-  }
-
-  static class C {
-  }
-
-  static class D extends C {
-  }
-
-  static class A {
-    public C getObj() {
-      System.out.println("class A - return C");
-      return new C();
-    }
-  }
-
-  static class B extends A {
-    @Override
-    public D getObj() {
-      System.out.println("class B - return D");
-      return new D();
     }
   }
 }
