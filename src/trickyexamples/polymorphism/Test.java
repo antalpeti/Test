@@ -25,16 +25,6 @@ public class Test {
     i = 1;
     System.out.print(i);
 
-    // Upcasting
-    Test[] tests = new Test[10];
-    Object[] objects = tests;
-    try {
-      objects[1] = new Object(); // this row thrown the exception
-      tests[1].toString();
-    } catch (ArrayStoreException e) {
-      System.out.println("ArrayStoreException thrown");
-    }
-
     // Dynamic class loading and instantiation
     try {
       String s = "java.util.ArrayList";
