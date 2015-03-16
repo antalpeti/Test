@@ -21,10 +21,17 @@ public class EqualityCheck {
     System.out.println(0.0 == -0.0 ? false : true);
   }
 
+  private static void checkStrings() {
+    System.out.println("String".toString() == "String");
+    System.out.println("String ".trim() == "String");
+  }
+
   public static void main(String[] args) {
     System.out.println("--NaN, POSITIVE_INFINITY and NEGATIVE_INFINITY comparison--");
     checkNotNumbers();
-    System.out.println("\n--Two zero comparison--");
+    System.out.println("\n--Two zeros equality check--");
     checkTwoZero();
+    System.out.println("\n--Strings equality checks--");
+    checkStrings();
   }
 }
