@@ -1,4 +1,4 @@
-package trickyexamples;
+package trickyexamples.inheritance;
 
 public class Parent {
   static {
