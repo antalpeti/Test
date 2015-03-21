@@ -9,7 +9,7 @@ public class Fibonacci {
     System.out.println("Fibonacci series upto " + number + " numbers : ");
 
     for (int i = 1; i <= number; i++) {
-      System.out.print(fibonacci2(i) + " ");
+      System.out.print(fibonacciIter(i) + " ");
     }
     System.out.println();
 
@@ -17,7 +17,8 @@ public class Fibonacci {
     sumFibonacci();
 
     System.out.println("The 10 th Fibonacci number");
-    System.out.println(fibo(10));
+    System.out.println(fibonacciRec(10));
+    System.out.println(fibonacciTailRec(3));
   }
 
 
@@ -41,15 +42,29 @@ public class Fibonacci {
    * @param n
    * @return
    */
-  public static int fibo(int n) {
+  public static int fibonacciRec(int n) {
     if (n == 0) {
       return 0;
     }
     if (n == 1) {
       return 1;
     } else {
-      return fibo(n - 1) + fibo(n - 2);
+      return fibonacciRec(n - 1) + fibonacciRec(n - 2);
     }
+  }
+
+  public static long fibonacciTailRec(long n) {
+    if (n <= 2) {
+      return 1;
+    }
+    return fibonacciTailRecAux(0, 1, n);
+  }
+
+  private static long fibonacciTailRecAux(long a, long b, long count) {
+    if (count <= 0) {
+      return a;
+    }
+    return fibonacciTailRecAux(b, a + b, count - 1);
   }
 
   /**
@@ -57,7 +72,7 @@ public class Fibonacci {
    *
    * @return Fibonacci number
    */
-  public static int fibonacci2(int number) {
+  public static int fibonacciIter(int number) {
     if (number == 1 || number == 2) {
       return 1;
     }
@@ -65,7 +80,6 @@ public class Fibonacci {
     for (int i = 3; i <= number; i++) {
 
       fibonacci = fibo1 + fibo2;
-
       fibo1 = fibo2;
       fibo2 = fibonacci;
 
