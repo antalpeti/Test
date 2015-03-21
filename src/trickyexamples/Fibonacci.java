@@ -17,8 +17,9 @@ public class Fibonacci {
     sumFibonacci();
 
     System.out.println("The 10 th Fibonacci number");
+    System.out.println(fibonacciIter(10));
     System.out.println(fibonacciRec(10));
-    System.out.println(fibonacciTailRec(3));
+    System.out.println(fibonacciTailRec(10));
   }
 
 
