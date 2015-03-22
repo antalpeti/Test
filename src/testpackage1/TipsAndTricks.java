@@ -1,11 +1,45 @@
 package testpackage1;
 
+import static java.util.Arrays.sort;
+
+import java.awt.Color;
+import java.util.ArrayList;
+
 public class TipsAndTricks {
   private int var;
 
   private String name;
 
+  /**
+   * <p>
+   * <b>Create delegate methods</b> - To create a delegate method for a field select the field's
+   * declaration and invoke <b>Source &gt; Generate Delegate Methods</b>.
+   * </p>
+   *
+   * @return
+   */
+  public String trim() {
+    return name.trim();
+  }
+
   private static boolean isOk;
+
+  /**
+   * <b>Use content assist to create getter and setters</b> - Another way to create getters and
+   * setters is using content assist. Set the cursor in the type body between members and press
+   * <b>Ctrl+Space</b> to get the proposals that create a getter or setter method stub.
+   */
+  @SuppressWarnings("unused")
+  private long num;
+
+  /**
+   * <p>
+   * <b>Content assist for variable, method parameter and field name completions</b> - Java > Code
+   * Style
+   * </p>
+   */
+  @SuppressWarnings("unused")
+  private Color color;
 
   /**
    * This is a delegated method.
@@ -15,6 +49,84 @@ public class TipsAndTricks {
    */
   public char charAt(int index) {
     return name.charAt(index);
+  }
+
+  /**
+   * <p>
+   * <b>Suppress types in content assist</b> - Java > Appearance > Type Filters
+   * </p>
+   */
+  @SuppressWarnings("unused")
+  private void notVisibleFeatures() {
+
+  }
+
+  /**
+   * <p>
+   * <b>Content assist for static imports.</b> - Java > Editor > Content Assist > Favorites
+   * </p>
+   *
+   * <p>
+   * <b>Content assist for variable with unresolved type</b> - Java > Editor > Content Assist > Add
+   * import instead of qualified name
+   * </p>
+   *
+   * <p>
+   * <b>Content assist after instanceof condition</b>
+   * </p>
+   *
+   * <p>
+   * <b>Parameter hints</b> - Ctrl+Shift+Space
+   * </p>
+   *
+   * <p>
+   * <b>Content assist on anonymous classes</b> - after "new " and the beginning of an abstract
+   * class or interface name press Ctrl+Space
+   * </p>
+   *
+   * <p>
+   * <b>Toggle between inserting and replacing content assist</b> - You can temporarily toggle the
+   * behavior by pressing and holding the Ctrl key while selecting the completion.
+   * </p>
+   *
+   * <p>
+   * <b>Incremental content assist</b> - Insert common prefixes automatically
+   * </p>
+   *
+   * <p>
+   * <b>Camel case support in code completion</b> - This support can be disabled using the <b>Show
+   * camel case matches</b> preference
+   * </p>
+   *
+   * <p>
+   * <b>Use ';' key to insert method invocation</b> - You can use the semicolon (;) key to select
+   * any method invocation proposal from the content assist popup.
+   * </p>
+   *
+   * <p>
+   * <b>Customize content assist categories</b> - Repeatedly invoking content assist (Ctrl+Space)
+   * cycles through different proposal categories.
+   * </p>
+   */
+  public void foo(Object obj) {
+    int a[] = new int[10];
+    sort(a);
+
+    ArrayList<Integer> list = new ArrayList<Integer>();
+
+    if (obj instanceof Exception) {
+      System.out.println(((Exception) obj).getMessage());
+    }
+
+    "1".equals("2");
+
+    new Interface() {
+
+      @Override
+      public int someMethod() {
+        return 0;
+      }
+    };
   }
 
   @Override
@@ -51,6 +163,24 @@ public class TipsAndTricks {
     return true;
   }
 
+  /**
+   * <p>
+   * <b>Create getters and setters</b> - To create getter and setter methods for a field, select the
+   * field's declaration and invoke <b>Source &gt; Generate Getter and Setter</b>.
+   * </p>
+   *
+   * <p>
+   * <b>Create getters and setters quick assist</b> - A quick assist <b>(Ctrl+1)</b> is available on
+   * fields to create getters and setters.
+   * </p>
+   *
+   * <p>
+   * <b>Delete getters and setters together with a field</b> - When you delete a field from within a
+   * view, Eclipse can propose deleting its Getter and Setter methods.
+   * </p>
+   *
+   * @param name
+   */
   public void setName(String name) {
     this.name = name;
   }
@@ -91,7 +221,14 @@ public class TipsAndTricks {
     return num > 10;
   }
 
-  public static void publicStaticMethod() {
+
+
+  /**
+   * Content assist
+   *
+   * @param some Content assist in Javadoc comments.
+   */
+  public static void publicStaticMethod(int some) {
     System.out.println("This is a public static method.");
   }
 
