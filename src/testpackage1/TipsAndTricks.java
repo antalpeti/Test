@@ -31,6 +31,9 @@ import java.util.ArrayList;
  * <li>Create your own templates</li>
  * <li>Use Quick Fix to create a new method</li>
  * <li>Use Quick Fix to change a method signature</li>
+ * <li>Use content assist to create a constructor stub</li>
+ * <li>Create new fields from parameters</li>
+ * <li>Use content assist to override a method</li>
  * </ol>
  */
 public class TipsAndTricks {
@@ -68,6 +71,8 @@ public class TipsAndTricks {
    */
   @SuppressWarnings("unused")
   private Color color;
+
+  private int i;
 
   /**
    * This is a delegated method.
@@ -165,6 +170,7 @@ public class TipsAndTricks {
   }
 
   private String quickFixMethod(int i, int j) {
+    this.setI(i);
     return "Method created with Quick Fix.";
   }
 
@@ -279,5 +285,13 @@ public class TipsAndTricks {
     for (int i = sa.length - 1; i >= 0; i--) {
       System.out.print(sa[i]);
     }
+  }
+
+  public int getI() {
+    return i;
+  }
+
+  public void setI(int i) {
+    this.i = i;
   }
 }
