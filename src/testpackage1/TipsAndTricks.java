@@ -34,6 +34,11 @@ import java.util.ArrayList;
  * <li>Use content assist to create a constructor stub</li>
  * <li>Create new fields from parameters</li>
  * <li>Use content assist to override a method</li>
+ * <li>Use Quick Fix to add unimplemented methods</li>
+ * <li>Use Clean Up to add unimplemented methods</li>
+ * <li>Override a method from a base class</li>
+ * <li>Rename in file</li>
+ * <li>Use Quick Fix to handle exceptions</li>
  * </ol>
  */
 public class TipsAndTricks {
