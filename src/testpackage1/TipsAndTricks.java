@@ -5,6 +5,34 @@ import static java.util.Arrays.sort;
 import java.awt.Color;
 import java.util.ArrayList;
 
+/**
+ * <ol>
+ * <li>Content assist</li>
+ * <li>Content assist in Javadoc comments</li>
+ * <li>Content assist for static imports</li>
+ * <li>Suppress types in content assist</li>
+ * <li>Content assist for variable, method parameter and field name completions</li>
+ * <li>Content assist for variable with unresolved type</li>
+ * <li>Content assist after instanceof condition</li>
+ * <li>Parameter hints</li>
+ * <li>Content assist on anonymous classes</li>
+ * <li>Toggle between inserting and replacing content assist</li>
+ * <li>Incremental content assist</li>
+ * <li>Camel case support in code completion</li>
+ * <li>Use ';' key to insert method invocation</li>
+ * <li>Customize content assist categories</li>
+ * <li>Create getters and setters</li>
+ * <li>Create getters and setters quick assist</li>
+ * <li>Use content assist to create getter and setters</li>
+ * <li>Delete getters and setters together with a field</li>
+ * <li>Create delegate methods</li>
+ * <li>Create <code>hashCode()</code> and <code>equals()</code></li>
+ * <li>Use templates to create SWT widgets</li>
+ * <li>Create your own templates</li>
+ * <li>Use Quick Fix to create a new method</li>
+ * <li>Use Quick Fix to change a method signature</li>
+ * </ol>
+ */
 public class TipsAndTricks {
   private int var;
 
@@ -127,6 +155,17 @@ public class TipsAndTricks {
         return 0;
       }
     };
+
+    String s = quickFixMethod(1, 2, "");
+    System.out.println(s);
+  }
+
+  private String quickFixMethod(int i, int j, String string) {
+    return quickFixMethod(i, j);
+  }
+
+  private String quickFixMethod(int i, int j) {
+    return "Method created with Quick Fix.";
   }
 
   @Override
