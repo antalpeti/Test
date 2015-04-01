@@ -39,6 +39,12 @@ import java.util.ArrayList;
  * <li>Override a method from a base class</li>
  * <li>Rename in file</li>
  * <li>Use Quick Fix to handle exceptions</li>
+ * <li>Less typing for assignments</li>
+ * <li>Less work with cast expressions</li>
+ * <li>Assign a cast expression</li>
+ * <li>Surround lines</li>
+ * <li>Create 'for' loops</li>
+ * <li>Migrate anonymous class creations to lambda expressions and back</li>
  * </ol>
  */
 public class TipsAndTricks {
@@ -168,6 +174,8 @@ public class TipsAndTricks {
 
     String s = quickFixMethod(1, 2, "");
     System.out.println(s);
+    String quickFixMethod = quickFixMethod(3, 4);
+    System.out.println(quickFixMethod);
   }
 
   private String quickFixMethod(int i, int j, String string) {
@@ -289,6 +297,11 @@ public class TipsAndTricks {
     String[] sa = new String[] {"abc", "def", "ghl"};
     for (int i = sa.length - 1; i >= 0; i--) {
       System.out.print(sa[i]);
+    }
+    System.out.println();
+    int[] ar = new int[] {1, 2, 3, 4, 5};
+    for (int i = 0; i < ar.length; i++) {
+      System.out.print(ar[i]);
     }
   }
 
