@@ -12,5 +12,10 @@
  * <img src="./class_diagram_example_2.gif"
  * alt="Class Diagram Example 2 (static fields, static methods)" width="100%">
  * </p>
+ *
+ * <h2>Association Example</h2>
+ * <p>
+ * <img src="./association_example.gif" alt="Association Example" width="100%">
+ * </p>
  */
 package uml;
