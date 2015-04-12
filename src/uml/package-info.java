@@ -17,5 +17,10 @@
  * <p>
  * <img src="./association_example.gif" alt="Association Example" width="100%">
  * </p>
+ *
+ * <h2>Multiplicity Example</h2>
+ * <p>
+ * <img src="./multiplicity_example.gif" alt="Multiplicity Example" width="100%">
+ * </p>
  */
 package uml;
