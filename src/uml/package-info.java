@@ -27,5 +27,10 @@
  * <p>
  * <img src="./generalization_example.gif" alt="Generalization Example" width="100%">
  * </p>
+ *
+ * <h2>Realization Example</h2>
+ * <p>
+ * <img src="./realization_example.gif" alt="Realization Example" width="100%">
+ * </p>
  */
 package uml;
