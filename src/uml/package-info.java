@@ -137,5 +137,21 @@
  * <p>
  * <img src="./aggregation_example.gif" alt="Aggregation Example" width="100%">
  * </p>
+ *
+ * <h2>Composition</h2>
+ * <p>
+ * This is again a whole or part relationship where if the whole is destroyed then the part cannot
+ * exist independently. Another important point about Composition is that the part at any point in
+ * time can have only one owner. E.g. A person can be an employee of one company at any point in
+ * time due to contractual obligations. That person cannot hold dual work authorisation. If the
+ * Company goes bankrupt the employee of this company does not exist and will be fired. The
+ * composition is represented as a filled diamond with data flowing in single direction from the
+ * whole to the part. The composition in Java is represented in the same form as aggregation with
+ * help of instance variables.
+ * </p>
+ * <p>
+ * <img src="./composition_example.gif" alt="Composition Example" width="100%">
+ * </p>
+ *
  */
 package uml;
