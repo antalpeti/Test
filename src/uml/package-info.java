@@ -125,5 +125,17 @@
  * <p>
  * <img src="./dependency_example.gif" alt="Dependency Example" width="100%">
  * </p>
+ *
+ * <h2>Aggregation</h2>
+ * <p>
+ * This shows “has a” relationship. It is a form of association relationship. This relationship
+ * highlights that a whole is made of its parts. So if a whole is destroyed the part still remains.
+ * In UML this is represented through a hollow diamond with the diamond symbol pointing towards the
+ * whole. In case of Java the aggregation follows the same structure as association. It is
+ * represented through the instance variables of a class.
+ * </p>
+ * <p>
+ * <img src="./aggregation_example.gif" alt="Aggregation Example" width="100%">
+ * </p>
  */
 package uml;
