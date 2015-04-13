@@ -85,15 +85,30 @@
  *
  * <h2>Multiplicity Example</h2>
  * <p>
+ * The below diagram explains a unidirectional association with a one to may relationship. Both use
+ * of ArrayList and Array is for illustration purposes only.
+ * </p>
+ * <p>
  * <img src="./multiplicity_example.gif" alt="Multiplicity Example" width="100%">
  * </p>
  *
  * <h2>Generalization Example</h2>
  * <p>
+ * This property represents the inheritance feature of the object oriented concept. In Java this can
+ * relate to the “extends” keyword. The inheritance should ideally follow the Liskov Substitution
+ * Principle i.e. the subtype should be able to substitute for its supertype. It helps to make the
+ * code implicitly follow the Open Close Principle i.e. Open for extension but closed for
+ * modification.
+ * </p>
+ * <p>
  * <img src="./generalization_example.gif" alt="Generalization Example" width="100%">
  * </p>
  *
  * <h2>Realization Example</h2>
+ * <p>
+ * This is related to the relationship between the class and the interface. The realization is
+ * equivalent to the “implements” keyword in Java.
+ * </p>
  * <p>
  * <img src="./realization_example.gif" alt="Realization Example" width="100%">
  * </p>
