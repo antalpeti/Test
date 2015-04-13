@@ -12,4 +12,8 @@ public class Parent {
   public Parent() {
     System.out.println("parent - constructor");
   }
+
+  public Parent(String str) {
+    System.out.println("parent - one parameter constructor");
+  }
 }
