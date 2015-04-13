@@ -112,5 +112,18 @@
  * <p>
  * <img src="./realization_example.gif" alt="Realization Example" width="100%">
  * </p>
+ *
+ * <h2>Dependency</h2>
+ * <p>
+ * Dependency is a relationship that shows that a class is dependent on another class for its
+ * existence or implementation. Dependency relationship is shown as a dotted line with an arrow from
+ * source class to the dependent class. In Java we can consider the dependency relationship if the
+ * source class has a reference to the dependent class directly or source class has methods through
+ * which the dependent objects are passed as a parameter or refers to the static operation’s of the
+ * dependent class or source class has a local variable referring to the dependent class etc.
+ * </p>
+ * <p>
+ * <img src="./dependency_example.gif" alt="Dependency Example" width="100%">
+ * </p>
  */
 package uml;
