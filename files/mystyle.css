@@ -1,0 +1,41 @@
+table { 
+	border-collapse: collapse; 
+	width: 100%; 
+	vertical-align: 
+	middle; text-align: center;
+}
+ 
+table, td, th { 
+	border: 1px solid black; 
+}
+
+pre.prettyprint {
+	border: 1px solid #D6D6D6; 
+	background-color: #EEE;
+	width: 98%;
+ 	border-radius: 0px; 
+ 	padding: 5px; 
+ 	margin: 0px 0px 10px; 
+ 	font-size: 12px; 
+ 	overflow: auto; 
+ } 
+ 
+ .pun, .opn, .clo { 
+ 	color: #660; 
+ } 
+ 
+ .typ { 
+ color: #7F0055; 
+ } 
+ 
+ .pln { 
+ color: #000;
+ } 
+ 
+ .com { 
+ color: #800; 
+ }
+ 
+  .kwd { 
+  color: #008; 
+  }
