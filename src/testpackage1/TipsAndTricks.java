@@ -45,6 +45,13 @@ import java.util.ArrayList;
  * <li>Surround lines</li>
  * <li>Create 'for' loops</li>
  * <li>Migrate anonymous class creations to lambda expressions and back</li>
+ * <li>More Quick Assists and Fixes</li>
+ * <li>Shortcuts for Quick Fixes and Assists</li>
+ * <li>Automatically insert type arguments</li>
+ * <li>Remove type arguments after content assist</li>
+ * <li>Remove surrounding statement</li>
+ * <li>How was that word spelled again?</li>
+ * <li>Structured selections</li>
  * </ol>
  */
 public class TipsAndTricks {
