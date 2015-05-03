@@ -62,6 +62,9 @@ import java.util.ArrayList;
  * <li>Wrap strings</li>
  * <li>Smart Typing and how to control it</li>
  * <li>Fix your code indentation with one key stroke</li>
+ * <li>Fix your code indentation on save</li>
+ * <li>Quick menus for source and refactoring actions</li>
+ * <li>Find unused code</li>
  * </ol>
  */
 public class TipsAndTricks {
@@ -101,6 +104,10 @@ public class TipsAndTricks {
 
   public static void setOk(boolean isOk) {
     TipsAndTricks.isOk = isOk;
+  }
+
+  public static int getVarIndirect(TipsAndTricks tipsAndTricks) {
+    return tipsAndTricks.getVar();
   }
 
   private int var;
