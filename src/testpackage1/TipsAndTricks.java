@@ -52,26 +52,61 @@ import java.util.ArrayList;
  * <li>Remove surrounding statement</li>
  * <li>How was that word spelled again?</li>
  * <li>Structured selections</li>
+ * <li>Find the matching bracket</li>
+ * <li>Smart Javadoc</li>
+ * <li>Use the local history to revert back to a previous edition of a method</li>
+ * <li>Use the local history to restore removed methods</li>
+ * <li>Customizable code generation</li>
+ * <li>Create comments in your code</li>
+ * <li>Sort members</li>
+ * <li>Wrap strings</li>
+ * <li>Smart Typing and how to control it</li>
+ * <li>Fix your code indentation with one key stroke</li>
  * </ol>
  */
 public class TipsAndTricks {
-  private int var;
+  private static boolean isOk;
 
-  private String name;
-
-  /**
-   * <p>
-   * <b>Create delegate methods</b> - To create a delegate method for a field select the field's
-   * declaration and invoke <b>Source &gt; Generate Delegate Methods</b>.
-   * </p>
-   *
-   * @return
-   */
-  public String trim() {
-    return name.trim();
+  public static boolean isOk() {
+    return isOk;
   }
 
-  private static boolean isOk;
+  public static void main(String[] args) {
+    TipsAndTricks obj = new TipsAndTricks();
+    obj.privateMethod();
+    System.out.println(TipsAndTricks.privateStaticMethod());
+    String[] sa = new String[] {"abc", "def", "ghl"};
+    for (int i = sa.length - 1; i >= 0; i--) {
+      System.out.print(sa[i]);
+    }
+    System.out.println();
+    int[] ar = new int[] {1, 2, 3, 4, 5};
+    for (int i = 0; i < ar.length; i++) {
+      System.out.print(ar[i]);
+    }
+  }
+
+  private static int privateStaticMethod() {
+    return (int) (Math.random() * 10);
+  }
+
+  /**
+   * Content assist
+   *
+   * @param some Content assist in Javadoc comments.
+   */
+  public static void publicStaticMethod(int some) {
+    System.out.println("This is a public static method.");
+  }
+
+  public static void setOk(boolean isOk) {
+    TipsAndTricks.isOk = isOk;
+  }
+
+  private int var;
+
+
+  private String name;
 
   /**
    * <b>Use content assist to create getter and setters</b> - Another way to create getters and
@@ -102,14 +137,29 @@ public class TipsAndTricks {
     return name.charAt(index);
   }
 
-  /**
-   * <p>
-   * <b>Suppress types in content assist</b> - Java > Appearance > Type Filters
-   * </p>
-   */
-  @SuppressWarnings("unused")
-  private void notVisibleFeatures() {
-
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (!(obj instanceof TipsAndTricks)) {
+      return false;
+    }
+    TipsAndTricks other = (TipsAndTricks) obj;
+    if (name == null) {
+      if (other.name != null) {
+        return false;
+      }
+    } else if (!name.equals(other.name)) {
+      return false;
+    }
+    if (var != other.var) {
+      return false;
+    }
+    return true;
   }
 
   /**
@@ -185,13 +235,16 @@ public class TipsAndTricks {
     System.out.println(quickFixMethod);
   }
 
-  private String quickFixMethod(int i, int j, String string) {
-    return quickFixMethod(i, j);
+  public int getI() {
+    return i;
   }
 
-  private String quickFixMethod(int i, int j) {
-    this.setI(i);
-    return "Method created with Quick Fix.";
+  public String getName() {
+    return name;
+  }
+
+  public int getVar() {
+    return var;
   }
 
   @Override
@@ -203,29 +256,42 @@ public class TipsAndTricks {
     return result;
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj) {
-      return true;
-    }
-    if (obj == null) {
-      return false;
-    }
-    if (!(obj instanceof TipsAndTricks)) {
-      return false;
-    }
-    TipsAndTricks other = (TipsAndTricks) obj;
-    if (name == null) {
-      if (other.name != null) {
-        return false;
-      }
-    } else if (!name.equals(other.name)) {
-      return false;
-    }
-    if (var != other.var) {
-      return false;
-    }
-    return true;
+  /**
+   * <p>
+   * <b>Suppress types in content assist</b> - Java > Appearance > Type Filters
+   * </p>
+   */
+  @SuppressWarnings("unused")
+  private void notVisibleFeatures() {
+
+  }
+
+  private void privateMethod() {
+    System.out.println("This is a private method :)");
+  }
+
+  protected String protectedMethod(String msg) {
+    return msg;
+  }
+
+  public boolean publicMethod(int num) {
+    return num > 10;
+  }
+
+  private String quickFixMethod(int i, int j) {
+    this.setI(i);
+    return "Method created with Quick Fix.";
+  }
+
+
+
+  private String quickFixMethod(int i, int j, String string) {
+    return quickFixMethod(i, j);
+  }
+
+
+  public void setI(int i) {
+    this.i = i;
   }
 
   /**
@@ -250,73 +316,19 @@ public class TipsAndTricks {
     this.name = name;
   }
 
-  public String getName() {
-    return name;
-  }
-
-  public int getVar() {
-    return var;
-  }
-
   public void setVar(int var) {
     this.var = var;
   }
 
-  public static boolean isOk() {
-    return isOk;
-  }
-
-  public static void setOk(boolean isOk) {
-    TipsAndTricks.isOk = isOk;
-  }
-
-  private void privateMethod() {
-    System.out.println("This is a private method :)");
-  }
-
-  private static int privateStaticMethod() {
-    return (int) (Math.random() * 10);
-  }
-
-  protected String protectedMethod(String msg) {
-    return msg;
-  }
-
-  public boolean publicMethod(int num) {
-    return num > 10;
-  }
-
-
-
   /**
-   * Content assist
+   * <p>
+   * <b>Create delegate methods</b> - To create a delegate method for a field select the field's
+   * declaration and invoke <b>Source &gt; Generate Delegate Methods</b>.
+   * </p>
    *
-   * @param some Content assist in Javadoc comments.
+   * @return
    */
-  public static void publicStaticMethod(int some) {
-    System.out.println("This is a public static method.");
-  }
-
-  public static void main(String[] args) {
-    TipsAndTricks obj = new TipsAndTricks();
-    obj.privateMethod();
-    System.out.println(TipsAndTricks.privateStaticMethod());
-    String[] sa = new String[] {"abc", "def", "ghl"};
-    for (int i = sa.length - 1; i >= 0; i--) {
-      System.out.print(sa[i]);
-    }
-    System.out.println();
-    int[] ar = new int[] {1, 2, 3, 4, 5};
-    for (int i = 0; i < ar.length; i++) {
-      System.out.print(ar[i]);
-    }
-  }
-
-  public int getI() {
-    return i;
-  }
-
-  public void setI(int i) {
-    this.i = i;
+  public String trim() {
+    return name.trim();
   }
 }
